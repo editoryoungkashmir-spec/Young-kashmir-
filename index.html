@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Young Kashmir — Your Voice. Your Kashmir. Latest news from Kashmir, Jammu, India and the world.">
+  <title>Young Kashmir | Your Voice. Your Kashmir.</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span>Saturday, 19 September 2026</span>
+      <span>Ganderbal • Jammu & Kashmir</span>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="container header-main">
+      <button class="menu-btn" aria-label="Open menu" onclick="toggleMenu()">☰</button>
+      <a class="brand" href="#"><span>YOUNG</span> KASHMIR</a>
+      <div class="header-actions">
+        <button aria-label="Search" onclick="focusSearch()">⌕</button>
+        <a class="live" href="#live">LIVE</a>
+      </div>
+    </div>
+    <nav id="nav" class="nav">
+      <div class="container nav-inner">
+        <a href="#latest">Latest</a>
+        <a href="#kashmir">Kashmir</a>
+        <a href="#jammu">Jammu</a>
+        <a href="#politics">Politics</a>
+        <a href="#india">India</a>
+        <a href="#world">World</a>
+        <a href="#business">Business</a>
+        <a href="#sports">Sports</a>
+        <a href="#education">Education</a>
+        <a href="#health">Health</a>
+        <a href="#videos">Videos</a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="breaking">
+    <div class="container breaking-inner">
+      <strong>BREAKING</strong>
+      <div class="ticker" id="ticker">
+        <span>Young Kashmir brings you the latest developments from Jammu & Kashmir.</span>
+        <span>Stay connected with verified local, national and world news.</span>
+        <span>News updates • Ground reports • Analysis</span>
+      </div>
+    </div>
+  </div>
+
+  <main class="container">
+    <section class="hero" id="latest">
+      <article class="hero-story">
+        <img src="https://images.unsplash.com/photo-1581791534721-e599df4417f7?auto=format&fit=crop&w=1400&q=85" alt="Kashmir landscape">
+        <div class="hero-overlay">
+          <span class="tag">KASHMIR</span>
+          <h1>Winter Chill Returns to the Valley as Srinagar Wakes to a White Morning</h1>
+          <p>Latest updates, local voices and ground reports from across Jammu & Kashmir.</p>
+          <small>Srinagar Bureau • 6 hours ago</small>
+        </div>
+      </article>
+      <aside class="side-stories">
+        <article class="side-card">
+          <img src="https://images.unsplash.com/photo-1605640840605-14ac1855827b?auto=format&fit=crop&w=800&q=80" alt="Mountain valley">
+          <div><span class="tag">JAMMU & KASHMIR</span><h2>Administration Reviews Arrangements Ahead of the Coming Season</h2><small>3 hours ago</small></div>
+        </article>
+        <article class="side-card no-image">
+          <span class="tag">POLITICS</span>
+          <h2>Political leaders call for stronger public outreach across the Valley</h2>
+          <small>5 hours ago</small>
+        </article>
+      </aside>
+    </section>
+
+    <section class="section" id="kashmir">
+      <div class="section-head"><h2>Kashmir</h2><a href="#">View all →</a></div>
+      <div class="grid">
+        <article class="card"><img src="https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=900&q=80" alt="Kashmir mountains"><span class="tag">KASHMIR</span><h3>Valley communities prepare for changing weather conditions</h3><p>Ground reports from districts across Kashmir.</p></article>
+        <article class="card"><img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=80" alt="Landscape"><span class="tag">SRINAGAR</span><h3>Tourism stakeholders discuss the season ahead</h3><p>Updates from the tourism and hospitality sector.</p></article>
+        <article class="card text-card"><span class="tag">GANDERBAL</span><h3>Local development projects reviewed by officials</h3><p>More updates from central Kashmir and surrounding areas.</p><small>Young Kashmir Desk • Today</small></article>
+      </div>
+    </section>
+
+    <section class="section split" id="politics">
+      <div>
+        <div class="section-head"><h2>Politics</h2><a href="#">View all →</a></div>
+        <article class="feature-small">
+          <div><span class="tag">POLITICS</span><h3>Political developments and public issues remain in focus across J&K</h3><p>Follow statements, decisions and reactions from across the region.</p></div>
+        </article>
+        <div class="list-item"><b>01</b><div><h3>Leaders respond to latest administrative decisions</h3><small>2 hours ago</small></div></div>
+        <div class="list-item"><b>02</b><div><h3>Public issues dominate political discussions</h3><small>4 hours ago</small></div></div>
+      </div>
+      <aside class="most-read">
+        <div class="section-head"><h2>Most Read</h2></div>
+        <ol>
+          <li>Valley weather update: latest conditions and advisory</li>
+          <li>Top local developments from across Kashmir</li>
+          <li>Education updates for students and families</li>
+          <li>Business community discusses new opportunities</li>
+          <li>Sports: local talent makes headlines</li>
+        </ol>
+      </aside>
+    </section>
+
+    <section class="section" id="india">
+      <div class="section-head"><h2>India & World</h2><a href="#">View all →</a></div>
+      <div class="grid">
+        <article class="card text-card"><span class="tag">INDIA</span><h3>National developments you need to know today</h3><p>Concise, clearly sourced updates from across India.</p></article>
+        <article class="card text-card"><span class="tag">WORLD</span><h3>Major international developments in focus</h3><p>World news explained with context and clarity.</p></article>
+        <article class="card text-card"><span class="tag">BUSINESS</span><h3>Markets, jobs and business updates</h3><p>Stories affecting consumers and businesses.</p></article>
+      </div>
+    </section>
+
+    <section class="newsletter" id="live">
+      <div><span class="tag">YOUNG KASHMIR</span><h2>Get the news in your inbox.</h2><p>Subscribe for important Kashmir, India and world updates.</p></div>
+      <form onsubmit="subscribe(event)"><input id="email" type="email" placeholder="Your email address" required><button>Subscribe</button></form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div><a class="brand footer-brand" href="#"><span>YOUNG</span> KASHMIR</a><p>Your Voice. Your Kashmir.</p></div>
+      <div><h4>Sections</h4><a href="#kashmir">Kashmir</a><a href="#politics">Politics</a><a href="#india">India</a><a href="#videos">Videos</a></div>
+      <div><h4>Contact</h4><p>Email: editor@youngkashmir.news</p><p>Jammu & Kashmir, India</p></div>
+    </div>
+    <div class="copyright">© 2026 Young Kashmir. All rights reserved. • Demo website — replace placeholder stories before publication.</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

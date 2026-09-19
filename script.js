@@ -1,0 +1,3 @@
+function toggleMenu(){document.getElementById('nav').classList.toggle('open')}
+function focusSearch(){alert('Search will be connected when the news CMS/search system is added.')}
+function subscribe(e){e.preventDefault();const email=document.getElementById('email').value;alert('Thanks! Newsletter signup received for '+email+'. Connect this form to your email service before launch.');e.target.reset()}
