@@ -3,29 +3,243 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <meta name="description" content="Young Kashmir — Your Voice. Your Kashmir. Latest news from Kashmir, Jammu, India and the world.">
+
   <title>Young Kashmir | Your Voice. Your Kashmir.</title>
+
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* =========================
+       ADMIN PANEL
+    ========================= */
+
+    .admin-panel {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: #f4f5f7;
+      overflow-y: auto;
+    }
+
+    .admin-header {
+      background: #111827;
+      color: white;
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .admin-header h2 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    .admin-close {
+      background: #ef4444;
+      color: white;
+      border: 0;
+      padding: 9px 15px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .admin-container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 25px 18px 50px;
+    }
+
+    .admin-login {
+      max-width: 400px;
+      margin: 80px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 5px 30px rgba(0,0,0,.12);
+    }
+
+    .admin-login h2 {
+      margin-top: 0;
+    }
+
+    .admin-input {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 12px;
+      margin: 8px 0 14px;
+      border: 1px solid #d1d5db;
+      border-radius: 7px;
+      font-size: 15px;
+    }
+
+    .admin-button {
+      background: #111827;
+      color: white;
+      border: 0;
+      padding: 12px 18px;
+      border-radius: 7px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .admin-button.green {
+      background: #16a34a;
+    }
+
+    .admin-button.red {
+      background: #dc2626;
+    }
+
+    .admin-card {
+      background: white;
+      padding: 22px;
+      margin-bottom: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.06);
+    }
+
+    .admin-card h3 {
+      margin-top: 0;
+    }
+
+    .admin-news-item {
+      border-top: 1px solid #e5e7eb;
+      padding: 15px 0;
+    }
+
+    .admin-news-item:first-child {
+      border-top: 0;
+    }
+
+    .admin-news-item h4 {
+      margin: 0 0 5px;
+    }
+
+    .admin-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .admin-status {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .admin-error {
+      color: #dc2626;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .admin-success {
+      color: #15803d;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .admin-open-button {
+      position: fixed;
+      right: 15px;
+      bottom: 15px;
+      z-index: 1000;
+      background: #111827;
+      color: white;
+      border: 0;
+      padding: 11px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0 4px 15px rgba(0,0,0,.25);
+    }
+
+    .new-year-banner {
+      background: #111827;
+      color: white;
+      text-align: center;
+      padding: 12px 10px;
+      font-weight: 800;
+      letter-spacing: .5px;
+    }
+
+    .new-year-banner small {
+      display: block;
+      margin-top: 3px;
+      font-weight: 400;
+      opacity: .9;
+    }
+
+    @media (max-width: 600px) {
+      .admin-container {
+        padding: 18px 12px 40px;
+      }
+
+      .admin-login {
+        margin: 40px 12px;
+      }
+    }
+  </style>
 </head>
+
 <body>
+
+  <!-- NEW YEAR BANNER -->
+  <div class="new-year-banner">
+    🎉 HAPPY NEW YEAR 2027 🎉
+    <small>Young Kashmir — Your Voice. Your Kashmir.</small>
+  </div>
+
+  <!-- TOP BAR -->
   <div class="topbar">
     <div class="container topbar-inner">
-      <span>Saturday, 19 September 2026</span>
+      <span>Sunday, 20 September 2026</span>
       <span>Ganderbal • Jammu & Kashmir</span>
     </div>
   </div>
 
+  <!-- HEADER -->
   <header class="header">
     <div class="container header-main">
-      <button class="menu-btn" aria-label="Open menu" onclick="toggleMenu()">☰</button>
-      <a class="brand" href="#"><span>YOUNG</span> KASHMIR</a>
+
+      <button
+        class="menu-btn"
+        aria-label="Open menu"
+        onclick="toggleMenu()">
+        ☰
+      </button>
+
+      <a class="brand" href="#">
+        <span>YOUNG</span> KASHMIR
+      </a>
+
       <div class="header-actions">
-        <button aria-label="Search" onclick="focusSearch()">⌕</button>
-        <a class="live" href="#live">LIVE</a>
+
+        <button
+          aria-label="Search"
+          onclick="focusSearch()">
+          ⌕
+        </button>
+
+        <a class="live" href="#live">
+          LIVE
+        </a>
+
       </div>
+
     </div>
+
     <nav id="nav" class="nav">
       <div class="container nav-inner">
+
         <a href="#latest">Latest</a>
         <a href="#kashmir">Kashmir</a>
         <a href="#jammu">Jammu</a>
@@ -37,99 +251,1095 @@
         <a href="#education">Education</a>
         <a href="#health">Health</a>
         <a href="#videos">Videos</a>
+
       </div>
     </nav>
   </header>
 
+  <!-- BREAKING NEWS -->
   <div class="breaking">
     <div class="container breaking-inner">
+
       <strong>BREAKING</strong>
+
       <div class="ticker" id="ticker">
-        <span>Young Kashmir brings you the latest developments from Jammu & Kashmir.</span>
-        <span>Stay connected with verified local, national and world news.</span>
-        <span>News updates • Ground reports • Analysis</span>
+
+        <span>
+          Young Kashmir brings you the latest developments from Jammu & Kashmir.
+        </span>
+
+        <span>
+          Stay connected with verified local, national and world news.
+        </span>
+
+        <span>
+          News updates • Ground reports • Analysis
+        </span>
+
       </div>
+
     </div>
   </div>
 
+  <!-- MAIN -->
   <main class="container">
+
+    <!-- HERO -->
     <section class="hero" id="latest">
+
       <article class="hero-story">
-        <img src="https://images.unsplash.com/photo-1581791534721-e599df4417f7?auto=format&fit=crop&w=1400&q=85" alt="Kashmir landscape">
+
+        <img
+          src="https://images.unsplash.com/photo-1581791534721-e599df4417f7?auto=format&fit=crop&w=1400&q=85"
+          alt="Kashmir landscape">
+
         <div class="hero-overlay">
+
           <span class="tag">KASHMIR</span>
-          <h1>Winter Chill Returns to the Valley as Srinagar Wakes to a White Morning</h1>
-          <p>Latest updates, local voices and ground reports from across Jammu & Kashmir.</p>
-          <small>Srinagar Bureau • 6 hours ago</small>
+
+          <h1>
+            Winter Chill Returns to the Valley as Srinagar Wakes to a White Morning
+          </h1>
+
+          <p>
+            Latest updates, local voices and ground reports from across Jammu & Kashmir.
+          </p>
+
+          <small>
+            Srinagar Bureau • 6 hours ago
+          </small>
+
         </div>
+
       </article>
+
       <aside class="side-stories">
+
         <article class="side-card">
-          <img src="https://images.unsplash.com/photo-1605640840605-14ac1855827b?auto=format&fit=crop&w=800&q=80" alt="Mountain valley">
-          <div><span class="tag">JAMMU & KASHMIR</span><h2>Administration Reviews Arrangements Ahead of the Coming Season</h2><small>3 hours ago</small></div>
+
+          <img
+            src="https://images.unsplash.com/photo-1605640840605-14ac1855827b?auto=format&fit=crop&w=800&q=80"
+            alt="Mountain valley">
+
+          <div>
+
+            <span class="tag">
+              JAMMU & KASHMIR
+            </span>
+
+            <h2>
+              Administration Reviews Arrangements Ahead of the Coming Season
+            </h2>
+
+            <small>
+              3 hours ago
+            </small>
+
+          </div>
+
         </article>
+
         <article class="side-card no-image">
-          <span class="tag">POLITICS</span>
-          <h2>Political leaders call for stronger public outreach across the Valley</h2>
-          <small>5 hours ago</small>
+
+          <span class="tag">
+            POLITICS
+          </span>
+
+          <h2>
+            Political leaders call for stronger public outreach across the Valley
+          </h2>
+
+          <small>
+            5 hours ago
+          </small>
+
         </article>
+
       </aside>
+
     </section>
 
+    <!-- KASHMIR -->
     <section class="section" id="kashmir">
-      <div class="section-head"><h2>Kashmir</h2><a href="#">View all →</a></div>
-      <div class="grid">
-        <article class="card"><img src="https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=900&q=80" alt="Kashmir mountains"><span class="tag">KASHMIR</span><h3>Valley communities prepare for changing weather conditions</h3><p>Ground reports from districts across Kashmir.</p></article>
-        <article class="card"><img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=80" alt="Landscape"><span class="tag">SRINAGAR</span><h3>Tourism stakeholders discuss the season ahead</h3><p>Updates from the tourism and hospitality sector.</p></article>
-        <article class="card text-card"><span class="tag">GANDERBAL</span><h3>Local development projects reviewed by officials</h3><p>More updates from central Kashmir and surrounding areas.</p><small>Young Kashmir Desk • Today</small></article>
-      </div>
-    </section>
 
-    <section class="section split" id="politics">
-      <div>
-        <div class="section-head"><h2>Politics</h2><a href="#">View all →</a></div>
-        <article class="feature-small">
-          <div><span class="tag">POLITICS</span><h3>Political developments and public issues remain in focus across J&K</h3><p>Follow statements, decisions and reactions from across the region.</p></div>
+      <div class="section-head">
+
+        <h2>Kashmir</h2>
+
+        <a href="#">
+          View all →
+        </a>
+
+      </div>
+
+      <div class="grid">
+
+        <article class="card">
+
+          <img
+            src="https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=900&q=80"
+            alt="Kashmir mountains">
+
+          <span class="tag">
+            KASHMIR
+          </span>
+
+          <h3>
+            Valley communities prepare for changing weather conditions
+          </h3>
+
+          <p>
+            Ground reports from districts across Kashmir.
+          </p>
+
         </article>
-        <div class="list-item"><b>01</b><div><h3>Leaders respond to latest administrative decisions</h3><small>2 hours ago</small></div></div>
-        <div class="list-item"><b>02</b><div><h3>Public issues dominate political discussions</h3><small>4 hours ago</small></div></div>
+
+        <article class="card">
+
+          <img
+            src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=80"
+            alt="Landscape">
+
+          <span class="tag">
+            SRINAGAR
+          </span>
+
+          <h3>
+            Tourism stakeholders discuss the season ahead
+          </h3>
+
+          <p>
+            Updates from the tourism and hospitality sector.
+          </p>
+
+        </article>
+
+        <article class="card text-card">
+
+          <span class="tag">
+            GANDERBAL
+          </span>
+
+          <h3>
+            Local development projects reviewed by officials
+          </h3>
+
+          <p>
+            More updates from central Kashmir and surrounding areas.
+          </p>
+
+          <small>
+            Young Kashmir Desk • Today
+          </small>
+
+        </article>
+
       </div>
+
+    </section>
+
+    <!-- POLITICS -->
+    <section class="section split" id="politics">
+
+      <div>
+
+        <div class="section-head">
+
+          <h2>Politics</h2>
+
+          <a href="#">
+            View all →
+          </a>
+
+        </div>
+
+        <article class="feature-small">
+
+          <div>
+
+            <span class="tag">
+              POLITICS
+            </span>
+
+            <h3>
+              Political developments and public issues remain in focus across J&K
+            </h3>
+
+            <p>
+              Follow statements, decisions and reactions from across the region.
+            </p>
+
+          </div>
+
+        </article>
+
+        <div class="list-item">
+
+          <b>01</b>
+
+          <div>
+
+            <h3>
+              Leaders respond to latest administrative decisions
+            </h3>
+
+            <small>
+              2 hours ago
+            </small>
+
+          </div>
+
+        </div>
+
+        <div class="list-item">
+
+          <b>02</b>
+
+          <div>
+
+            <h3>
+              Public issues dominate political discussions
+            </h3>
+
+            <small>
+              4 hours ago
+            </small>
+
+          </div>
+
+        </div>
+
+      </div>
+
       <aside class="most-read">
-        <div class="section-head"><h2>Most Read</h2></div>
+
+        <div class="section-head">
+
+          <h2>
+            Most Read
+          </h2>
+
+        </div>
+
         <ol>
-          <li>Valley weather update: latest conditions and advisory</li>
-          <li>Top local developments from across Kashmir</li>
-          <li>Education updates for students and families</li>
-          <li>Business community discusses new opportunities</li>
-          <li>Sports: local talent makes headlines</li>
+
+          <li>
+            Valley weather update: latest conditions and advisory
+          </li>
+
+          <li>
+            Top local developments from across Kashmir
+          </li>
+
+          <li>
+            Education updates for students and families
+          </li>
+
+          <li>
+            Business community discusses new opportunities
+          </li>
+
+          <li>
+            Sports: local talent makes headlines
+          </li>
+
         </ol>
+
       </aside>
+
     </section>
 
+    <!-- INDIA WORLD -->
     <section class="section" id="india">
-      <div class="section-head"><h2>India & World</h2><a href="#">View all →</a></div>
-      <div class="grid">
-        <article class="card text-card"><span class="tag">INDIA</span><h3>National developments you need to know today</h3><p>Concise, clearly sourced updates from across India.</p></article>
-        <article class="card text-card"><span class="tag">WORLD</span><h3>Major international developments in focus</h3><p>World news explained with context and clarity.</p></article>
-        <article class="card text-card"><span class="tag">BUSINESS</span><h3>Markets, jobs and business updates</h3><p>Stories affecting consumers and businesses.</p></article>
+
+      <div class="section-head">
+
+        <h2>
+          India & World
+        </h2>
+
+        <a href="#">
+          View all →
+        </a>
+
       </div>
+
+      <div class="grid">
+
+        <article class="card text-card">
+
+          <span class="tag">
+            INDIA
+          </span>
+
+          <h3>
+            National developments you need to know today
+          </h3>
+
+          <p>
+            Concise, clearly sourced updates from across India.
+          </p>
+
+        </article>
+
+        <article class="card text-card">
+
+          <span class="tag">
+            WORLD
+          </span>
+
+          <h3>
+            Major international developments in focus
+          </h3>
+
+          <p>
+            World news explained with context and clarity.
+          </p>
+
+        </article>
+
+        <article class="card text-card">
+
+          <span class="tag">
+            BUSINESS
+          </span>
+
+          <h3>
+            Markets, jobs and business updates
+          </h3>
+
+          <p>
+            Stories affecting consumers and businesses.
+          </p>
+
+        </article>
+
+      </div>
+
     </section>
 
+    <!-- NEWSLETTER -->
     <section class="newsletter" id="live">
-      <div><span class="tag">YOUNG KASHMIR</span><h2>Get the news in your inbox.</h2><p>Subscribe for important Kashmir, India and world updates.</p></div>
-      <form onsubmit="subscribe(event)"><input id="email" type="email" placeholder="Your email address" required><button>Subscribe</button></form>
+
+      <div>
+
+        <span class="tag">
+          YOUNG KASHMIR
+        </span>
+
+        <h2>
+          Get the news in your inbox.
+        </h2>
+
+        <p>
+          Subscribe for important Kashmir, India and world updates.
+        </p>
+
+      </div>
+
+      <form onsubmit="subscribe(event)">
+
+        <input
+          id="email"
+          type="email"
+          placeholder="Your email address"
+          required>
+
+        <button>
+          Subscribe
+        </button>
+
+      </form>
+
     </section>
+
   </main>
 
+  <!-- FOOTER -->
   <footer>
+
     <div class="container footer-grid">
-      <div><a class="brand footer-brand" href="#"><span>YOUNG</span> KASHMIR</a><p>Your Voice. Your Kashmir.</p></div>
-      <div><h4>Sections</h4><a href="#kashmir">Kashmir</a><a href="#politics">Politics</a><a href="#india">India</a><a href="#videos">Videos</a></div>
-      <div><h4>Contact</h4><p>Email: editor@youngkashmir.news</p><p>Jammu & Kashmir, India</p></div>
+
+      <div>
+
+        <a class="brand footer-brand" href="#">
+          <span>YOUNG</span> KASHMIR
+        </a>
+
+        <p>
+          Your Voice. Your Kashmir.
+        </p>
+
+      </div>
+
+      <div>
+
+        <h4>
+          Sections
+        </h4>
+
+        <a href="#kashmir">
+          Kashmir
+        </a>
+
+        <a href="#politics">
+          Politics
+        </a>
+
+        <a href="#india">
+          India
+        </a>
+
+        <a href="#videos">
+          Videos
+        </a>
+
+      </div>
+
+      <div>
+
+        <h4>
+          Contact
+        </h4>
+
+        <p>
+          Email: editor@youngkashmir.news
+        </p>
+
+        <p>
+          Jammu & Kashmir, India
+        </p>
+
+      </div>
+
     </div>
-    <div class="copyright">© 2026 Young Kashmir. All rights reserved. • Demo website — replace placeholder stories before publication.</div>
+
+    <div class="copyright">
+
+      © 2026 Young Kashmir. All rights reserved.
+
+    </div>
+
   </footer>
 
+
+  <!-- =========================
+       ADMIN BUTTON
+  ========================= -->
+
+  <button
+    class="admin-open-button"
+    onclick="openAdmin()">
+
+    🔐 Admin
+
+  </button>
+
+
+  <!-- =========================
+       ADMIN PANEL
+  ========================= -->
+
+  <div
+    class="admin-panel"
+    id="adminPanel">
+
+    <div class="admin-header">
+
+      <h2>
+        YOUNG KASHMIR — ADMIN
+      </h2>
+
+      <button
+        class="admin-close"
+        onclick="closeAdmin()">
+
+        Close
+
+      </button>
+
+    </div>
+
+
+    <!-- LOGIN -->
+
+    <div
+      class="admin-login"
+      id="adminLogin">
+
+      <h2>
+        Admin Login
+      </h2>
+
+      <p>
+        Sign in to manage Young Kashmir.
+      </p>
+
+      <div
+        class="admin-error"
+        id="loginError">
+      </div>
+
+      <label>
+        Username
+      </label>
+
+      <input
+        class="admin-input"
+        id="adminUsername"
+        type="text"
+        placeholder="Username">
+
+      <label>
+        Password
+      </label>
+
+      <input
+        class="admin-input"
+        id="adminPassword"
+        type="password"
+        placeholder="Password">
+
+      <button
+        class="admin-button"
+        onclick="adminLogin()">
+
+        Login
+
+      </button>
+
+      <p style="font-size:12px;margin-top:15px;color:#777;">
+        Demo login: admin / youngkashmir
+      </p>
+
+    </div>
+
+
+    <!-- DASHBOARD -->
+
+    <div
+      class="admin-container"
+      id="adminDashboard"
+      style="display:none;">
+
+      <div class="admin-card">
+
+        <h3>
+          Dashboard
+        </h3>
+
+        <p>
+          Welcome to Young Kashmir Admin Panel.
+        </p>
+
+        <div class="admin-actions">
+
+          <button
+            class="admin-button green"
+            onclick="showAddNews()">
+
+            + Add News
+
+          </button>
+
+          <button
+            class="admin-button red"
+            onclick="adminLogout()">
+
+            Logout
+
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- ADD NEWS -->
+
+      <div
+        class="admin-card"
+        id="addNewsCard"
+        style="display:none;">
+
+        <h3>
+          Add New News
+        </h3>
+
+        <label>
+          News Category
+        </label>
+
+        <select
+          class="admin-input"
+          id="newsCategory">
+
+          <option>
+            Kashmir
+          </option>
+
+          <option>
+            Jammu
+          </option>
+
+          <option>
+            Politics
+          </option>
+
+          <option>
+            India
+          </option>
+
+          <option>
+            World
+          </option>
+
+          <option>
+            Business
+          </option>
+
+          <option>
+            Sports
+          </option>
+
+          <option>
+            Education
+          </option>
+
+          <option>
+            Health
+          </option>
+
+        </select>
+
+
+        <label>
+          Headline
+        </label>
+
+        <input
+          class="admin-input"
+          id="newsTitle"
+          type="text"
+          placeholder="Enter headline">
+
+
+        <label>
+          News Description
+        </label>
+
+        <textarea
+          class="admin-input"
+          id="newsDescription"
+          rows="5"
+          placeholder="Enter news description"></textarea>
+
+
+        <label>
+          Image URL
+        </label>
+
+        <input
+          class="admin-input"
+          id="newsImage"
+          type="url"
+          placeholder="https://example.com/photo.jpg">
+
+
+        <div class="admin-actions">
+
+          <button
+            class="admin-button green"
+            onclick="saveNews()">
+
+            Publish News
+
+          </button>
+
+          <button
+            class="admin-button"
+            onclick="hideAddNews()">
+
+            Cancel
+
+          </button>
+
+        </div>
+
+        <div
+          class="admin-status"
+          id="newsStatus">
+        </div>
+
+      </div>
+
+
+      <!-- MANAGE NEWS -->
+
+      <div class="admin-card">
+
+        <h3>
+          Published News
+        </h3>
+
+        <div id="newsList">
+
+          <p>
+            No additional news added yet.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- JAVASCRIPT -->
+
   <script src="script.js"></script>
+
+  <script>
+
+    /* =========================
+       ADMIN SYSTEM
+    ========================= */
+
+    const ADMIN_USERNAME = "admin";
+    const ADMIN_PASSWORD = "youngkashmir";
+
+    function openAdmin() {
+
+      document.getElementById("adminPanel").style.display = "block";
+
+      checkAdminLogin();
+
+    }
+
+
+    function closeAdmin() {
+
+      document.getElementById("adminPanel").style.display = "none";
+
+    }
+
+
+    function adminLogin() {
+
+      const username =
+        document.getElementById("adminUsername").value.trim();
+
+      const password =
+        document.getElementById("adminPassword").value;
+
+      const error =
+        document.getElementById("loginError");
+
+
+      if (
+        username === ADMIN_USERNAME &&
+        password === ADMIN_PASSWORD
+      ) {
+
+        localStorage.setItem(
+          "youngKashmirAdmin",
+          "true"
+        );
+
+        error.innerHTML = "";
+
+        showDashboard();
+
+      } else {
+
+        error.innerHTML =
+          "Incorrect username or password.";
+
+      }
+
+    }
+
+
+    function checkAdminLogin() {
+
+      if (
+        localStorage.getItem(
+          "youngKashmirAdmin"
+        ) === "true"
+      ) {
+
+        showDashboard();
+
+      } else {
+
+        document.getElementById(
+          "adminLogin"
+        ).style.display = "block";
+
+        document.getElementById(
+          "adminDashboard"
+        ).style.display = "none";
+
+      }
+
+    }
+
+
+    function showDashboard() {
+
+      document.getElementById(
+        "adminLogin"
+      ).style.display = "none";
+
+      document.getElementById(
+        "adminDashboard"
+      ).style.display = "block";
+
+      loadNews();
+
+    }
+
+
+    function adminLogout() {
+
+      localStorage.removeItem(
+        "youngKashmirAdmin"
+      );
+
+      document.getElementById(
+        "adminLogin"
+      ).style.display = "block";
+
+      document.getElementById(
+        "adminDashboard"
+      ).style.display = "none";
+
+    }
+
+
+    function showAddNews() {
+
+      document.getElementById(
+        "addNewsCard"
+      ).style.display = "block";
+
+    }
+
+
+    function hideAddNews() {
+
+      document.getElementById(
+        "addNewsCard"
+      ).style.display = "none";
+
+    }
+
+
+    function saveNews() {
+
+      const category =
+        document.getElementById(
+          "newsCategory"
+        ).value;
+
+      const title =
+        document.getElementById(
+          "newsTitle"
+        ).value.trim();
+
+      const description =
+        document.getElementById(
+          "newsDescription"
+        ).value.trim();
+
+      const image =
+        document.getElementById(
+          "newsImage"
+        ).value.trim();
+
+
+      if (!title || !description) {
+
+        document.getElementById(
+          "newsStatus"
+        ).innerHTML =
+          "Please enter a headline and description.";
+
+        return;
+
+      }
+
+
+      const news =
+        JSON.parse(
+          localStorage.getItem(
+            "youngKashmirNews"
+          ) || "[]"
+        );
+
+
+      news.unshift({
+
+        id: Date.now(),
+
+        category: category,
+
+        title: title,
+
+        description: description,
+
+        image: image,
+
+        date: new Date().toLocaleString()
+
+      });
+
+
+      localStorage.setItem(
+        "youngKashmirNews",
+        JSON.stringify(news)
+      );
+
+
+      document.getElementById(
+        "newsStatus"
+      ).innerHTML =
+        "News saved successfully on this device.";
+
+      document.getElementById(
+        "newsTitle"
+      ).value = "";
+
+      document.getElementById(
+        "newsDescription"
+      ).value = "";
+
+      document.getElementById(
+        "newsImage"
+      ).value = "";
+
+      loadNews();
+
+    }
+
+
+    function loadNews() {
+
+      const news =
+        JSON.parse(
+          localStorage.getItem(
+            "youngKashmirNews"
+          ) || "[]"
+        );
+
+
+      const list =
+        document.getElementById(
+          "newsList"
+        );
+
+
+      if (news.length === 0) {
+
+        list.innerHTML =
+          "<p>No additional news added yet.</p>";
+
+        return;
+
+      }
+
+
+      list.innerHTML = "";
+
+
+      news.forEach(function(item) {
+
+        const div =
+          document.createElement("div");
+
+        div.className =
+          "admin-news-item";
+
+
+        div.innerHTML = `
+
+          <h4>${escapeHTML(item.title)}</h4>
+
+          <small>
+            ${escapeHTML(item.category)}
+            •
+            ${escapeHTML(item.date)}
+          </small>
+
+          <p>
+            ${escapeHTML(item.description)}
+          </p>
+
+          <div class="admin-actions">
+
+            <button
+              class="admin-button red"
+              onclick="deleteNews(${item.id})">
+
+              Delete
+
+            </button>
+
+          </div>
+
+        `;
+
+
+        list.appendChild(div);
+
+      });
+
+    }
+
+
+    function deleteNews(id) {
+
+      const news =
+        JSON.parse(
+          localStorage.getItem(
+            "youngKashmirNews"
+          ) || "[]"
+        );
+
+
+      const updated =
+        news.filter(function(item) {
+
+          return item.id !== id;
+
+        });
+
+
+      localStorage.setItem(
+        "youngKashmirNews",
+        JSON.stringify(updated)
+      );
+
+
+      loadNews();
+
+    }
+
+
+    function escapeHTML(text) {
+
+      const div =
+        document.createElement("div");
+
+      div.textContent = text;
+
+      return div.innerHTML;
+
+    }
+
+  </script>
+
 </body>
 </html>
